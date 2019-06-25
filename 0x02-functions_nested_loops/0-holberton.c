@@ -1,6 +1,11 @@
-#include "holberton.h"
+include "holberton.h"
 
-int main (void)
+/**
+ * main - print holberton
+ * Return: 0
+ */
+
+int main(void)
 {
 	_putchar ('H');
 	_putchar ('o');
