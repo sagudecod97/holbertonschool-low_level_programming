@@ -1,6 +1,12 @@
 #include "holberton.h"
 
-void print_alphabet(void){
+/**
+ * print_alphabet - prints the whole alphabet
+ * Return: 1
+ */
+
+void print_alphabet(void)
+{
 
 	int letters;
 
