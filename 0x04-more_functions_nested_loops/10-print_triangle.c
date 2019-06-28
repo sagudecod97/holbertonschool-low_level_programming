@@ -21,7 +21,7 @@ void print_triangle(int size)
 
 			while (space > n)
 			{
-				_putchar ('.');
+				_putchar (32);
 				space--;
 			}
 
