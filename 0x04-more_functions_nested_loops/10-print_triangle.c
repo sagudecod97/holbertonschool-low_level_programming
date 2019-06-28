@@ -10,28 +10,29 @@ void print_triangle(int size)
 {
 	int n, space, square;
 
-	for (n = 1; n <=  size; n++)
+	if (size == 0)
 	{
-		if (size == 0)
+		_putchar ('\n');
+	}else
+	{
+		for (n = 1; n <=  size; n++)
 		{
-			_putchar ('\n');
-		};
+			space = size;
 
-		space = size;
+			while (space > n)
+			{
+				_putchar ('.');
+				space--;
+			}
 
-		while (space > n)
-		{
-			_putchar ('.');
-			space--;
+			square = space - n;
+
+			while (square < space)
+			{
+				_putchar (35);
+				square++;
+			}
+			_putchar('\n');
 		}
-
-		square = space - n;
-
-		while (square < space)
-		{
-			_putchar (35);
-			square++;
-		}
-		_putchar('\n');
 	}
 }
