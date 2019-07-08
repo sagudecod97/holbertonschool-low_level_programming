@@ -16,13 +16,17 @@ char *_strchr(char *s, char c)
 		n++;
 	}
 
+	if (c == '\0')
+	{
+		return (s);
+	}
+
 	while (i < n && flag == 0)
 	{
 		if (s[i] == c)
 		{
 			position = s + i;
 			flag = 1;
-			break;
 		}
 		i++;
 	}
