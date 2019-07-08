@@ -12,13 +12,13 @@ char *_strchr(char *s, char c)
 {
 	int i = 0, n = 0;
 
-	char * position;
+	char *position;
 
 	while (s[n] !=  '\0')
 	{
 		n++;
 	}
-	
+
 	while (i < n)
 	{
 		if (s[i] == c)
