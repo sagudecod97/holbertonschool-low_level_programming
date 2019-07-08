@@ -1,5 +1,3 @@
-#include "holberton.h"
-
 /**
  * *_strchr - Function that find a character in a string
  * @s: String
@@ -9,7 +7,7 @@
 
 char *_strchr(char *s, char c)
 {
-	int i = 0, n = 0;
+	int i = 0, n = 0, flag = 0;
 
 	char *position;
 
@@ -18,11 +16,12 @@ char *_strchr(char *s, char c)
 		n++;
 	}
 
-	while (i < n)
+	while (i < n && flag == 0)
 	{
 		if (s[i] == c)
 		{
 			position = s + i;
+			flag = 1;
 			break;
 		}
 		i++;
