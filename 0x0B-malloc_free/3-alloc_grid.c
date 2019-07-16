@@ -10,7 +10,7 @@
 
 int **alloc_grid(int width, int height)
 {
-	int **pint;
+	int **pint, ltlpns = 0;
 
 	int i, j, h, zero = 0;
 
@@ -32,10 +32,10 @@ int **alloc_grid(int width, int height)
 		if (pint[i] == NULL)
 		{
 			free(pint);
-			while (i >= 0)
+			while (ltlpns < i)
 			{
-				free(pint[i]);
-				i--;
+				free(pint[ltlpns]);
+				ltlpns++;
 			}
 			return (NULL);
 		}
