@@ -9,7 +9,7 @@
 
 char *_strdup(char *str)
 {
-	unsigned int i = 1, j;
+	unsigned int i = 0, j;
 
 	char *pstr;
 
@@ -25,7 +25,7 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	for (j = 0; j <= i; j++)
+	for (j = 0; j <= i + 1; j++)
 	{
 		pstr[j] = str[j];
 	};
