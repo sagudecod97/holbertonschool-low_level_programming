@@ -2,12 +2,6 @@
 #define _DOG_H_
 
 /**
- * Structs, enums and unions definitions
- * Typedefs
- * Function prototypes
- */
-
-/**
  * struct dog - Structure of a dog
  * @name: dog's name
  * @age: dog's age
