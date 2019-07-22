@@ -37,11 +37,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (po == NULL)
 	{
 		free(po);
+		free(pn);
 		free(ptr);
 		return (NULL);
 	};
 	for (k = 0; k <= i; k++)
-		pn[k] = name[i];
+		pn[k] = name[k];
 	for (k = 0; k <= j; k++)
 		po[k] = owner[k];
 	ptr->name = pn;
