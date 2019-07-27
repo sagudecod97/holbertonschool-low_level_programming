@@ -26,15 +26,16 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 		if (separator != NULL && i < (n - 1) && strings != NULL)
 		{
-			printf("%s%s ", strings, separator);
+			printf("%s%s", strings, separator);
 		} else if (strings == NULL)
 		{
 			printf("(nil)%c ", *separator);
 		} else
 		{
-			printf("%s\n", strings);
+			printf("%s", strings);
 		}
-	}
+	};
+	printf("\n");
 
 	va_end(valist);
 }
