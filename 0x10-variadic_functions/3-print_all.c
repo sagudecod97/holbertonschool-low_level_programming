@@ -1,6 +1,7 @@
 #include "variadic_functions.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdarg.h>
 
 /**
  * put_a_comma - Prints a comma
@@ -67,6 +68,6 @@ void print_all(const char * const format, ...)
 		put_a_comma(format, i);
 		i++;
 	}
-	printf("\n");
 	va_end(valist);
+	printf("\n");
 }
