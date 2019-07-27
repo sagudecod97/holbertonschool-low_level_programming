@@ -3,6 +3,32 @@
 #include <stdio.h>
 
 /**
+ * put_a_comma - Prints a comma
+ * @format: String
+ * @i: Outside counter
+ * Return: Nothing
+ */
+
+void put_a_comma(const char *format, int i)
+{
+	int in;
+
+	in = i + 1;
+
+	while (format[in] != '\0' && (format[i] == 'c'
+		|| format[i] == 'f' || format[i] == 'i'
+		|| format[i] == 's'))
+	{
+		if (format[in] == 'c' || format[in] == 'f'
+		|| format[in] == 's' || format[in] == 's')
+		{
+			printf(", ");
+			break;
+		};
+		in++;
+	}
+}
+/**
  * print_all - Function that prints anything
  * @format: Types of data
  * Return: Nothing
@@ -10,13 +36,13 @@
 
 void print_all(const char * const format, ...)
 {
-	int i = 0, flag = 1;
+	int i = 0;
 	char *s;
 	va_list valist;
 
 	va_start(valist, format);
 
-	while (format[i] != '\0')
+	while (format[i] != '\0' && format)
 	{
 		switch (format[i])
 		{
@@ -37,14 +63,8 @@ void print_all(const char * const format, ...)
 				}
 				printf("%s", s);
 				break;
-			default:
-				flag = 0;
 		}
-		if (format[(i + 1)] != '\0' && (format[i] == 'c' || format[i] == 'i'
-			|| format[i] == 'f' || format[i] == 's'))
-		{
-			printf(", ");
-		}
+		put_a_comma(format, i);
 		i++;
 	}
 	printf("\n");
