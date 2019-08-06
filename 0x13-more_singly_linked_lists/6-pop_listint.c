@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * pop_lisint - Function that deletes the head node
+ * pop_listint - Function that deletes the head node
  * @head: Head
  * Return: Node's data(n)
  */
@@ -18,7 +18,7 @@ int pop_listint(listint_t **head)
 
 	n = (*head)->n;
 
-	node =(*head)->next;
+	node = (*head)->next;
 
 	free(*head);
 
