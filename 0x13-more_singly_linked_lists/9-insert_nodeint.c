@@ -40,7 +40,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 				node->n = n;
 				node->next = tmp2;
 				tmp->next = node;
-				return (*head);
+				return (node);
 			};
 			tmp2 = tmp2->next;
 			tmp = tmp->next;
