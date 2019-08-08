@@ -9,25 +9,22 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int i = 0, res;
+	int res = 0;
 
-	unsigned int j;
+	unsigned int i = 0;
 
 	while (n >> i)
 		i++;
 
-	for (j = i - 1; ; j--)
+	if (index > i)
 	{
-		res = n >> j;
+		return (-1);
+	};
 
-		if (j == index)
-		{
-			if (res & 1)
-				return (1);
-			else
-				return (0);
-		}
-	}
+	res = n >> index;
 
-	return (-1);
+	res = res & 1;
+
+	return (res);
+
 }
