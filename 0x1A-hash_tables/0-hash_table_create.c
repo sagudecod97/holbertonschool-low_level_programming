@@ -8,13 +8,13 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-        hash_table_t *hash_arr = malloc(sizeof(hash_table_t));
+	hash_table_t *hash_arr = malloc(sizeof(hash_table_t));
 
-        if (hash_arr == NULL)
-        {
-                free(hash_arr);
-                return NULL;
-        }
+	if (hash_arr == NULL)
+	{
+		free(hash_arr);
+		return (NULL);
+	}
 
-        return hash_arr;
+	return (hash_arr);
 }
