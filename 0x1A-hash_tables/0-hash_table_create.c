@@ -22,10 +22,13 @@ hash_table_t *hash_table_create(unsigned long int size)
 	};
 
 	table_create->size = size;
-	table_create->array = calloc(size, sizeof(hash_node_t));
+	table_create->array = calloc(size, sizeof(hash_node_t *));
 
 	if (table_create->array == NULL)
+	{
+		free(table_create);
 		return (NULL);
+	}
 
 	return (table_create);
 }
