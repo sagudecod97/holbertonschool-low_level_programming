@@ -1,5 +1,13 @@
 #include "hash_tables.h"
 
+/**
+ * add_node - Adds a node
+ * @head: Array
+ * @str: String to pass
+ * @key: Key
+ * Return: Pointer to node
+ */
+
 hash_node_t *add_node(hash_node_t **head, const char *str, const char *key)
 {
 	hash_node_t *tmp;
