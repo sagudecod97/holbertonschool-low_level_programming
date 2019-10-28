@@ -12,12 +12,12 @@ void selection_sort(int *array, size_t size)
 	unsigned int i, j, h, pos = 0, change;
 	int value_1 = 0, value_2 = 0, breaker;
 
-	for(i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 	{
 		h = 0;
 		change = 0;
 		value_2 = array[i];
-		for(j = i; j < size; j++)
+		for (j = i; j < size; j++)
 		{
 			if (value_2 > array[j])
 			{
