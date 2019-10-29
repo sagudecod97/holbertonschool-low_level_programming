@@ -23,6 +23,7 @@ void check_reverse(int *array, unsigned int position, unsigned int knuth)
 				value_ch = array[i];
 				array[i] = array[i - knuth];
 				array[i - knuth] = value_ch;
+				continue;
 			}
 		}
 	}
@@ -42,32 +43,35 @@ void shell_sort(int *array, size_t size)
 
 	if (array == NULL || size < 2)
 		return;
-	for (i = 0; knuth * (i + i) < size; i++)
+	for (i = -1; knuth < size;)
 	{
 		knuth = (knuth * 3) + 1;
+		i++;
 		arr_knuth[i] = knuth;
 	};
-	for (j = 0; j < i; j++)
+	i--;
+	knuth = arr_knuth[i];
+	for (j = 0; j <= i; j++)
 	{
 		for (h = 0; h < size; h++)
 		{
 			if ((knuth + h) <=  size - 1)
 			{
-				if ((knuth + h) >= size / 2)
+				if (h < size)
 				{
 					check_reverse(array, (knuth + h), knuth);
 				}
 				else if (array[h] > array[knuth + h])
-				{
-					value_ch = array[knuth + h];
-					array[knuth + h] = array[h];
-					array[h] = value_ch;
-				}
+				{ value_ch = array[knuth + h], array[knuth + h] = array[h];
+				array[h] = value_ch; }
 			}
 		}
+		if (knuth == 4)
+			knuth = 1;
+		else
+			knuth = arr_knuth[i - 1];
 		print_array(array, size);
 		if (size == 2)
 			break;
-		knuth = arr_knuth[i - 2];
 	}
 }
