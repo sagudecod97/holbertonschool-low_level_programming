@@ -37,7 +37,7 @@ void check_reverse(int *array, unsigned int position, unsigned int knuth)
 
 void shell_sort(int *array, size_t size)
 {
-	unsigned int knuth = 0, i, j, h, counter = 0;
+	unsigned int knuth = 0, i, j, h;
 	int value_ch = 0, arr_knuth[999];
 
 	for (i = 0; knuth * (i + i) < size; i++)
