@@ -40,6 +40,9 @@ void shell_sort(int *array, size_t size)
 	unsigned int knuth = 0, i, j, h;
 	int value_ch = 0, arr_knuth[999];
 
+	if (array == NULL || size < 2)
+		return;
+
 	for (i = 0; knuth * (i + i) < size; i++)
 	{
 		knuth = (knuth * 3) + 1;
