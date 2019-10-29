@@ -1,6 +1,28 @@
 #include "sort.h"
 
 /**
+ * case_two - Prints in case of 2 elems
+ * @array: Array
+ * @size: Array's size
+ * Return: Nothing
+ */
+
+void case_two(int *array, size_t size)
+{
+	int value_zero = 0;
+
+	if (array[0] > array[1])
+	{
+		value_zero = array[0];
+		array[0] = array[1];
+		array[1] = value_zero;
+		print_array(array, size);
+		return;
+	};
+	print_array(array, size);
+}
+
+/**
  * check_reverse - Checks values backwards from position
  * @array: Array
  * @position: Position to start
@@ -43,13 +65,18 @@ void shell_sort(int *array, size_t size)
 
 	if (array == NULL || size < 2)
 		return;
-	for (i = -1; knuth < size;)
+	for (i = -1; knuth <= size;)
 	{
 		knuth = (knuth * 3) + 1;
 		i++;
 		arr_knuth[i] = knuth;
 	};
 	i--;
+	if (size == 2)
+	{
+		case_two(array, size);
+		return;
+	};
 	knuth = arr_knuth[i];
 	for (j = 0; j <= i; j++)
 	{
@@ -71,7 +98,5 @@ void shell_sort(int *array, size_t size)
 		else
 			knuth = arr_knuth[i - 1];
 		print_array(array, size);
-		if (size == 2)
-			break;
 	}
 }
