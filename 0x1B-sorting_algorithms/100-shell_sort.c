@@ -42,13 +42,11 @@ void shell_sort(int *array, size_t size)
 
 	if (array == NULL || size < 2)
 		return;
-
 	for (i = 0; knuth * (i + i) < size; i++)
 	{
 		knuth = (knuth * 3) + 1;
 		arr_knuth[i] = knuth;
 	};
-
 	for (j = 0; j < i; j++)
 	{
 		for (h = 0; h < size; h++)
@@ -68,6 +66,8 @@ void shell_sort(int *array, size_t size)
 			}
 		}
 		print_array(array, size);
+		if (size == 2)
+			break;
 		knuth = arr_knuth[i - 2];
 	}
 }
