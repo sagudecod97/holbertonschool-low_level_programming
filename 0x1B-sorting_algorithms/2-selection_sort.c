@@ -1,6 +1,23 @@
 #include "sort.h"
 
 /**
+ * swaper - swaps position values
+ * @array: array
+ * @i: value to swap
+ * @j: value to swap
+ * Return: void
+ */
+
+void swaper(int array[], int i, int j)
+{
+	int holder = 0;
+
+	holder = array[i];
+	array[i] = array[j];
+	array[j] = holder;
+}
+
+/**
  * selection_sort - Selection sort algorithm
  * @array: Array of Ints
  * @size: Array's size
@@ -10,8 +27,10 @@
 void selection_sort(int *array, size_t size)
 {
 	unsigned int i, j, h, pos = 0, change;
-	int value_1 = 0, value_2 = 0, breaker;
+	int value_2 = 0, breaker;
 
+	if (!array || size < 2)
+		return;
 	for (i = 0; i < size; i++)
 	{
 		h = 0;
@@ -42,9 +61,7 @@ void selection_sort(int *array, size_t size)
 			break;
 		if (change == 1)
 		{
-			value_1 = array[i];
-			array[i] = value_2;
-			array[pos] = value_1;
+			swaper(array, i, pos);
 			print_array(array, size);
 		}
 	}
