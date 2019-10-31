@@ -129,6 +129,9 @@ void radix_sort(int *array, size_t size)
 {
 	int i, num_digits = 0;
 
+	if (array == NULL || size < 2)
+		return;
+
 	num_digits = get_digits(array, size);
 
 	for (i = 0; i < num_digits; i++)
