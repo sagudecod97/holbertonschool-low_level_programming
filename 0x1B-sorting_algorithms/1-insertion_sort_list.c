@@ -8,14 +8,15 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *temporal = NULL, *head = NULL;
+	listint_t *temporal = NULL;
+
+	if (!list)
+		return;
+	if ((*list)->next == NULL)
+		return;
 
 	temporal = *list;
-	head = *list;
-
-
 	temporal = temporal->next;
-
 
 	for (; temporal; temporal = temporal->next)
 	{
@@ -37,4 +38,3 @@ void insertion_sort_list(listint_t **list)
 		}
 	}
 }
-
