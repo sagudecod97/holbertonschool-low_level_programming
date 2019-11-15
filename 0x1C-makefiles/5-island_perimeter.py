@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 """ Returns the perimeter of an Island """
 
-def IgnisGehenalis(i, j, grid):
-    count = 0
 
-    #if j == 0 or i == 0:
-     #   count += 1
-    #elif i == len(grid) - 1 or j == len(grid[i]) - 1:
-     #   count += 1
+def IgnisGehenalis(i, j, grid):
+    """ Returns the number of zeros around """
+    count = 0
 
     if i - 1 < 0 or grid[i - 1][j] == 0:
         count += 1
@@ -20,7 +17,9 @@ def IgnisGehenalis(i, j, grid):
 
     return count
 
+
 def island_perimeter(grid):
+    """ Returns the perimeter """
     count = 0
 
     for i in range(len(grid)):
