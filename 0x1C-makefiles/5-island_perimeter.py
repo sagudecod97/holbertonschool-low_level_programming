@@ -4,10 +4,10 @@
 def IgnisGehenalis(i, j, grid):
     count = 0
 
-    if j == 0 or i == 0:
-        count += 1
-    elif i == len(grid) - 1 or j == len(grid[i]) - 1:
-        count += 1
+    #if j == 0 or i == 0:
+     #   count += 1
+    #elif i == len(grid) - 1 or j == len(grid[i]) - 1:
+     #   count += 1
 
     if i - 1 < 0 or grid[i - 1][j] == 0:
         count += 1
