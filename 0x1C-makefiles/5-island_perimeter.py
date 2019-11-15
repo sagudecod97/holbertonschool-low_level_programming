@@ -1,21 +1,31 @@
 #!/usr/bin/python3
-def island_perimeter(grid):
-    if len(grid) == 0:
-        return 0
+""" Returns the perimeter of an Island """
 
-    zeros = 0
-    ones = 0
-    perimeter = 0
-    cells = 0
+def IgnisGehenalis(i, j, grid):
+    count = 0
+
+    if j == 0 or i == 0:
+        count += 1
+    elif i == len(grid) - 1 or j == len(grid[i]) - 1:
+        count += 1
+
+    if i - 1 < 0 or grid[i - 1][j] == 0:
+        count += 1
+    if i + 1 > len(grid) - 1 or grid[i + 1][j] == 0:
+        count += 1
+    if j + 1 > len(grid[i]) - 1 or grid[i][j + 1] == 0:
+        count += 1
+    if j - 1 < 0 or grid[i][j - 1] == 0:
+        count += 1
+
+    return count
+
+def island_perimeter(grid):
+    count = 0
 
     for i in range(len(grid)):
         for j in range(len(grid[i])):
-            cells += 1
             if grid[i][j] == 1:
-                ones += 1
-            else:
-                zeros += 1
+                count += IgnisGehenalis(i, j, grid)
 
-    perimeter = ((cells + ones) - zeros) + 2
-
-    return perimeter
+    return count
