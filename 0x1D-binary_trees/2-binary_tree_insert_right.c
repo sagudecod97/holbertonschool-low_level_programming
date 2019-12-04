@@ -1,12 +1,10 @@
 #include "binary_trees.h"
-
 /**
- * *binary_tree_insert_right - Inserts a node as right-child of another node
+ * *binary_tree_insert_right - Inserts a node as left-child of another node
  * @parent: Parent's node
  * @value: Value of node
  * Return: Pointer created
  */
-
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
 	binary_tree_t *n_node = NULL;
