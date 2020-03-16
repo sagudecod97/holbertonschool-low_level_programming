@@ -8,6 +8,7 @@
  * @value: value
  * Return: index value
  */
+
 int jump_search(int *array, size_t size, int value)
 {
 	size_t prev, move;
