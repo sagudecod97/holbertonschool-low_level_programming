@@ -1,73 +1,43 @@
 #include "search_algos.h"
-
 /**
- * print_arr - Prints an array
- * @array: Array to print
- * @size: Array's size
- * @pos: First position to print
- * Return: Nothing
+ * binary_search - searches for a value in a sorted array
+ * of integers using the Binary search algorithm
+ * @array: pointer to the first element of the array to search in
+ * @size:  number of elements in array
+ * @value: to search for
+ * Return: index where value is located or -1 of error
  **/
-
-void print_arr(int *array, unsigned int size, int pos)
-{
-	unsigned int i;
-
-	if (pos == (int)size)
-		return;
-
-	printf("Searching in array: ");
-	for (i = pos; i < size; i++)
-	{
-		if (i == (size - 1))
-			printf("%i", array[i]);
-		else
-			printf("%i, ", array[i]);
-	};
-	printf("\n");
-}
-
-/**
- * binary_search - Search for a value using Binary search
- * @array: Array of ints
- * @size: Array's size
- * @value: Value to search
- * Return: Index where found, -1 if its not present
- **/
-
 int binary_search(int *array, size_t size, int value)
 {
-	unsigned int i, new_size = size;
-	int lowest = 0, highest = size - 1, mid = 0;
+	int left = 0, right = size - 1, mid, i;
 
 	if (array == NULL)
 		return (-1);
 
-	if (size % 2 == 0)
-		mid = (size - 1) / 2;
-	else
-		mid = size / 2;
-
-	print_arr(array, size, 0);
-
-	for (i = 0; new_size > 0; i++)
+	while (left <= right)
 	{
+		printf("Searching in array: ");
+		for (i = left; i <= right; i++)
+		{
+			if (i == right)
+			{
+				printf("%d", array[i]);
+				break;
+			}
+			printf("%d, ", array[i]);
+		}
+		printf("\n");
+
+		mid = (left + right) / 2;
+
 		if (array[mid] == value)
 			return (mid);
-		else if (array[mid] > value)
-		{
-			highest = mid - 1;
-			new_size = highest + 1;
-		}
-		else
-		{
-			lowest = mid + 1;
-			new_size = highest + 1;
-		}
-		mid = (lowest + highest) / 2;
-		print_arr(array, new_size, lowest);
-		if (i == 2)
-			break;
-	};
 
+		else if (array[mid] > value)
+			right = mid - 1;
+
+		else if (array[mid] < value)
+			left = mid + 1;
+	}
 	return (-1);
 }
